@@ -72,7 +72,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvJ-7T-9Vi">
-                        <rect key="frame" x="188" y="34" width="45" height="21"/>
+                        <rect key="frame" x="226" y="34" width="45" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="45" id="0H1-36-kC8"/>
                             <constraint firstAttribute="height" constant="21" id="H7r-PA-krn"/>
@@ -95,9 +95,9 @@
                     <constraint firstItem="3QD-xN-o8P" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-64.5" id="RlV-Lk-07e"/>
                     <constraint firstItem="1AB-EO-hok" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="41" id="S6I-y4-xtM"/>
                     <constraint firstAttribute="trailing" secondItem="mNI-qp-7ra" secondAttribute="trailing" constant="35" id="aqv-mU-O5b"/>
-                    <constraint firstItem="QvJ-7T-9Vi" firstAttribute="leading" secondItem="3QD-xN-o8P" secondAttribute="trailing" constant="-54" id="dR8-jn-0g3"/>
                     <constraint firstItem="mf8-rV-lTE" firstAttribute="centerY" secondItem="mNI-qp-7ra" secondAttribute="centerY" id="f4R-mo-QBy"/>
                     <constraint firstItem="mNI-qp-7ra" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="gaV-Df-Cu3"/>
+                    <constraint firstItem="QvJ-7T-9Vi" firstAttribute="leading" secondItem="3QD-xN-o8P" secondAttribute="trailing" constant="-16" id="ias-3L-6cp"/>
                     <constraint firstItem="Ih2-0d-p8h" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="k1w-9E-Ilo"/>
                 </constraints>
             </tableViewCellContentView>
