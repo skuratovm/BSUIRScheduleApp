@@ -100,6 +100,12 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
+        vc.modalPresentationStyle = .formSheet
+        present(vc, animated: true,completion: nil)
+    }
+    
 
     
     
