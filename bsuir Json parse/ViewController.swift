@@ -79,27 +79,31 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let cell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath) as! CellTableViewCell
-     
-        
+     //secure subjtext
         var subjtext = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].subject)
         if subjtext == nil{
             subjtext = (result?.schedules[indexPath.section].schedule[indexPath.row].subject)!
         }
-           
+    //secure sttimetext
         
+        var sttimetxt = resultMemory?.schedules[indexPath.section].schedule[indexPath.row].startLessonTime
+        if sttimetxt == nil{
+            sttimetxt = (result?.schedules[indexPath.section].schedule[indexPath.row].startLessonTime)!
+        }
         
+     //secure endtimetext
         
+        var endTimeTxt = resultMemory?.schedules[indexPath.section].schedule[indexPath.row].endLessonTime
+        if endTimeTxt == nil{
+            endTimeTxt = result?.schedules[indexPath.section].schedule[indexPath.row].endLessonTime
+        }
         
-      //  let subjtext = (result?.schedules[indexPath.section].schedule[indexPath.row].subject)!
+    // secure lessontype
         
-        
-        
-        
-        
-       ///////
-        let sttimetxt = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].startLessonTime)!
-        let endTimeTxt = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].endLessonTime)!
-        let lessonTypeTxt = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].lessonType.rawValue)!
+        var lessonTypeTxt = resultMemory?.schedules[indexPath.section].schedule[indexPath.row].lessonType.rawValue
+        if lessonTypeTxt == nil{
+            lessonTypeTxt = result?.schedules[indexPath.section].schedule[indexPath.row].lessonType.rawValue
+        }
        var teacherTxt = ""
         if resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee.indices.contains(0) == true {
             teacherTxt =  (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].fio)!
