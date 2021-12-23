@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IhT-TT-SdQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8GI-rg-5pe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +12,7 @@
         <!-- Schedule-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="bsuir_Json_parse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="scheduleVC" id="BYZ-38-t0r" customClass="ViewController" customModule="bsuir_Json_parse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,6 +39,16 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0a-Fb-IrH">
+                                <rect key="frame" x="360" y="82" width="41" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="arrow.clockwise" catalog="system" symbolScale="large" renderingMode="original"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ukW-uB-ufF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -50,6 +61,8 @@
                     </view>
                     <navigationItem key="navigationItem" title=" Schedule" largeTitleDisplayMode="always" id="1a6-Rf-oZY"/>
                     <connections>
+                        <outlet property="groupTextLabel" destination="nZ3-AH-qEV" id="kx8-Yn-eNQ"/>
+                        <outlet property="refreshButtonOutlet" destination="o0a-Fb-IrH" id="nHq-Wh-Q1M"/>
                         <outlet property="tableView" destination="nBb-wS-idP" id="pvQ-B0-d6q"/>
                     </connections>
                 </viewController>
@@ -176,8 +189,77 @@
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="112.5"/>
         </scene>
+        <!--Start View Controller-->
+        <scene sceneID="TMv-ks-IWG">
+            <objects>
+                <viewController id="8GI-rg-5pe" customClass="StartViewController" customModule="bsuir_Json_parse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m5A-OH-25D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p2h-OB-w5r">
+                                <rect key="frame" x="144" y="171" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="Dns-n6-hAd"/>
+                                    <constraint firstAttribute="width" constant="130" id="or8-Ke-4cV"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKU-sg-zYD">
+                                <rect key="frame" x="88.5" y="766" width="237" height="51"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="MOK-yr-0lj"/>
+                                    <constraint firstAttribute="width" constant="237" id="e3T-iK-Zy8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="enterGroupButtonAction:" destination="8GI-rg-5pe" eventType="touchUpInside" id="D3k-Ug-dXp"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q8H-Oq-xVZ">
+                                <rect key="frame" x="82" y="431" width="250" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="37S-uj-jHE"/>
+                                    <constraint firstAttribute="width" constant="250" id="daP-53-Odo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите номер группы" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cp-aB-9AN">
+                                <rect key="frame" x="115" y="494" width="184" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XcW-Be-RLs"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DKU-sg-zYD" firstAttribute="centerX" secondItem="m5A-OH-25D" secondAttribute="centerX" id="9Wg-zg-3Go"/>
+                            <constraint firstItem="Q8H-Oq-xVZ" firstAttribute="centerX" secondItem="m5A-OH-25D" secondAttribute="centerX" id="Ed9-d5-iVX"/>
+                            <constraint firstItem="5cp-aB-9AN" firstAttribute="top" secondItem="Q8H-Oq-xVZ" secondAttribute="bottom" constant="23" id="OWa-Km-TsF"/>
+                            <constraint firstItem="p2h-OB-w5r" firstAttribute="centerX" secondItem="m5A-OH-25D" secondAttribute="centerX" id="etb-z8-uqN"/>
+                            <constraint firstItem="Q8H-Oq-xVZ" firstAttribute="top" secondItem="p2h-OB-w5r" secondAttribute="bottom" constant="130" id="fsp-Ce-G8t"/>
+                            <constraint firstItem="p2h-OB-w5r" firstAttribute="top" secondItem="XcW-Be-RLs" secondAttribute="top" constant="127" id="jQr-x4-Ngj"/>
+                            <constraint firstItem="5cp-aB-9AN" firstAttribute="centerX" secondItem="m5A-OH-25D" secondAttribute="centerX" id="wC2-cL-fPC"/>
+                            <constraint firstItem="DKU-sg-zYD" firstAttribute="top" secondItem="XcW-Be-RLs" secondAttribute="top" constant="722" id="wke-Xg-bYt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="enterGroupButton" destination="DKU-sg-zYD" id="ode-Sb-KaK"/>
+                        <outlet property="groupTextField" destination="Q8H-Oq-xVZ" id="pMb-eQ-SAT"/>
+                        <outlet property="logoImageView" destination="p2h-OB-w5r" id="xJq-MN-PuX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cid-c6-EfU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-533.33333333333337" y="809.59821428571422"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

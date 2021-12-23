@@ -20,6 +20,7 @@ class NetworkDataFetch{
                 do{
                     let schedule = try JSONDecoder().decode(ScheduleModel.self, from: data)
                     responce(schedule,nil)
+                    
                 }catch let jsonError{
                     print("Failed to decode json",jsonError)
                 }

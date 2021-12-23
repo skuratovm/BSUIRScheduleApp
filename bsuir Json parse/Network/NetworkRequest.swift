@@ -24,7 +24,7 @@ class  NetworkRequest {
                            
                 guard let data = data else {return}
                 completion(.success(data))
-
+              
                 
             }
            
