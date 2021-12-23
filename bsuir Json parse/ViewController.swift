@@ -92,7 +92,7 @@ class ViewController: UIViewController {
             
         } else if resultMemoryArray?.isEmpty == true{
         
-            fetchSchedule(groupNumber: groupNumber)
+            fetchSchedule(groupNumber: "020603")
             
         }
     

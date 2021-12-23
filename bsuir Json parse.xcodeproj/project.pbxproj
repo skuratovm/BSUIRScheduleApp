@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		408FE32F2774B3F4004A1DA9 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FE32E2774B3F4004A1DA9 /* Alerts.swift */; };
 		409283A42751453F00918185 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409283A32751453F00918185 /* InfoViewController.swift */; };
 		409283A82751479B00918185 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409283A72751479B00918185 /* UserDefaultsManager.swift */; };
 		409283AD27514A9D00918185 /* Teacher-PNG-Free-Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 409283AC27514A9D00918185 /* Teacher-PNG-Free-Image.png */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		408FE32E2774B3F4004A1DA9 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		409283A32751453F00918185 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		409283A72751479B00918185 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		409283AC27514A9D00918185 /* Teacher-PNG-Free-Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Teacher-PNG-Free-Image.png"; path = "../../../Teacher-PNG-Free-Image.png"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				40ACF16F274C3C5800BF2BD5 /* ScheduleModel.swift */,
 				409283A32751453F00918185 /* InfoViewController.swift */,
 				40F6E68C2773E8ED003FAB3F /* UIButton extension.swift */,
+				408FE32E2774B3F4004A1DA9 /* Alerts.swift */,
 			);
 			path = "bsuir Json parse";
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				409283A82751479B00918185 /* UserDefaultsManager.swift in Sources */,
 				40ACF174274CE1A100BF2BD5 /* NetworkRequest.swift in Sources */,
 				409283A42751453F00918185 /* InfoViewController.swift in Sources */,
+				408FE32F2774B3F4004A1DA9 /* Alerts.swift in Sources */,
 				40ACF158274BFB2E00BF2BD5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
