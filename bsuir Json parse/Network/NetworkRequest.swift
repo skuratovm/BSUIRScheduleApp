@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class  NetworkRequest {
     static let shared = NetworkRequest()

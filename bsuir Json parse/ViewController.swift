@@ -54,7 +54,9 @@ class ViewController: UIViewController {
                 //self?.activityIndicator.stopAnimating()
                 self?.refreshButtonOutlet.endRotate()
             } else {
-                print(error?.localizedDescription)
+                self?.errorArlert(title: "Ошибка соединения!", message: "Проверьте подкрлючение к инернету и попробуйте еще раз.")
+                print("❌\(error?.localizedDescription)")
+               
             }
         }
         
@@ -74,9 +76,11 @@ class ViewController: UIViewController {
         fetchSchedule(groupNumber: groupNumber)
         //refreshButtonOutlet.rotate()
        
+       
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //var groupNumber = 920605
         
         NotificationCenter.default.addObserver(self, selector: #selector(setGroupNumberValue(_:)), name: Notification.Name("data"), object: nil)
@@ -92,7 +96,7 @@ class ViewController: UIViewController {
             
         } else if resultMemoryArray?.isEmpty == true{
         
-            fetchSchedule(groupNumber: "020603")
+            fetchSchedule(groupNumber: groupNumber)
             
         }
     
