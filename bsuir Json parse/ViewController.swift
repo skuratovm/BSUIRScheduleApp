@@ -63,6 +63,9 @@ class ViewController: UIViewController {
         
       
     }
+    @objc func alertRefresh(_ notification: Notification){
+        fetchSchedule(groupNumber: groupNumber)
+    }
     @objc func setGroupNumberValue(_ notification: Notification){
         let groupNumberLL = notification.object as! String
         groupNumber = groupNumberLL
@@ -94,14 +97,14 @@ class ViewController: UIViewController {
         if resultMemoryArray?.isEmpty == false{
             resultMemory = DataBase.shared.schedules?[0]
             
-        } else if resultMemoryArray?.isEmpty == true{
-        
+        } else {
+
             fetchSchedule(groupNumber: groupNumber)
             
         }
     
-       
-        print("🥰:\(resultMemory):😘")
+        NotificationCenter.default.addObserver(self, selector: #selector(alertRefresh(_:)), name: Notification.Name("ref"), object: nil)
+        print("📍:\(resultMemory):📍")
         //print("🍄\(groupNumber)")
     }
     

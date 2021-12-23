@@ -14,7 +14,7 @@ extension ViewController {
     
         }
         let alertRefresh = UIAlertAction(title: "Повторить", style: .default) { (_) in
-
+            NotificationCenter.default.post(name: Notification.Name("ref"), object: nil)
         }
         alertController.addAction(alertOk)
         alertController.addAction(alertRefresh)
