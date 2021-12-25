@@ -9,7 +9,7 @@ extension UIButton {
     func rotate(){
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
            rotationAnimation.fromValue = 0.0
-        rotationAnimation.toValue = Double.pi*20
+        rotationAnimation.toValue = -Double.pi*20
         rotationAnimation.duration = 10
         rotationAnimation.isCumulative = true
         layer.add(rotationAnimation, forKey: nil)

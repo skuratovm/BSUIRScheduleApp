@@ -36,6 +36,13 @@ class StartViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+          textField.resignFirstResponder()
+          return true
+      }
     
     
     @IBAction func enterGroupButtonAction(_ sender: UIButton) {

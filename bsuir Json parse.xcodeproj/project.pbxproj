@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4075FFDE277508CA0043C0AD /* pngfind.com-refresh-icon-png-transparent-4296335.png in Resources */ = {isa = PBXBuildFile; fileRef = 4075FFDD277508CA0043C0AD /* pngfind.com-refresh-icon-png-transparent-4296335.png */; };
 		408FE32F2774B3F4004A1DA9 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FE32E2774B3F4004A1DA9 /* Alerts.swift */; };
 		409283A42751453F00918185 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409283A32751453F00918185 /* InfoViewController.swift */; };
 		409283A82751479B00918185 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409283A72751479B00918185 /* UserDefaultsManager.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4075FFDD277508CA0043C0AD /* pngfind.com-refresh-icon-png-transparent-4296335.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pngfind.com-refresh-icon-png-transparent-4296335.png"; path = "../../pngfind.com-refresh-icon-png-transparent-4296335.png"; sourceTree = "<group>"; };
 		408FE32E2774B3F4004A1DA9 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		409283A32751453F00918185 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		409283A72751479B00918185 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		40ACF154274BFB2E00BF2BD5 /* bsuir Json parse */ = {
 			isa = PBXGroup;
 			children = (
+				4075FFDD277508CA0043C0AD /* pngfind.com-refresh-icon-png-transparent-4296335.png */,
 				409283AB27514A7800918185 /* Image Set */,
 				409283A62751476700918185 /* UserDefaultsManager */,
 				40ACF172274CE17C00BF2BD5 /* Network */,
@@ -184,6 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4075FFDE277508CA0043C0AD /* pngfind.com-refresh-icon-png-transparent-4296335.png in Resources */,
 				40ACF162274BFB3300BF2BD5 /* LaunchScreen.storyboard in Resources */,
 				40ACF16D274BFBD400BF2BD5 /* CellTableViewCell.xib in Resources */,
 				40ACF15F274BFB3300BF2BD5 /* Assets.xcassets in Resources */,
