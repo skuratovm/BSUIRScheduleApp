@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		406AF6382777DAC200163995 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406AF6372777DAC200163995 /* ImageDownloader.swift */; };
 		4075FFDE277508CA0043C0AD /* pngfind.com-refresh-icon-png-transparent-4296335.png in Resources */ = {isa = PBXBuildFile; fileRef = 4075FFDD277508CA0043C0AD /* pngfind.com-refresh-icon-png-transparent-4296335.png */; };
 		408FE32F2774B3F4004A1DA9 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FE32E2774B3F4004A1DA9 /* Alerts.swift */; };
 		409283A42751453F00918185 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409283A32751453F00918185 /* InfoViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		406AF6372777DAC200163995 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		4075FFDD277508CA0043C0AD /* pngfind.com-refresh-icon-png-transparent-4296335.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pngfind.com-refresh-icon-png-transparent-4296335.png"; path = "../../pngfind.com-refresh-icon-png-transparent-4296335.png"; sourceTree = "<group>"; };
 		408FE32E2774B3F4004A1DA9 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		409283A32751453F00918185 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				40ACF173274CE1A000BF2BD5 /* NetworkRequest.swift */,
 				40ACF176274CEC4F00BF2BD5 /* NetworkDataFetch.swift */,
+				406AF6372777DAC200163995 /* ImageDownloader.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			files = (
 				40ACF15A274BFB2E00BF2BD5 /* ViewController.swift in Sources */,
 				40ACF16C274BFBD400BF2BD5 /* CellTableViewCell.swift in Sources */,
+				406AF6382777DAC200163995 /* ImageDownloader.swift in Sources */,
 				40ACF177274CEC4F00BF2BD5 /* NetworkDataFetch.swift in Sources */,
 				40ACF170274C3C5800BF2BD5 /* ScheduleModel.swift in Sources */,
 				40F6E68D2773E8ED003FAB3F /* UIButton extension.swift in Sources */,

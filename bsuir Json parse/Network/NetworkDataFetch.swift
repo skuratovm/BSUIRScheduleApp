@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
 class NetworkDataFetch{
     static let shared = NetworkDataFetch()
     
@@ -16,7 +18,7 @@ class NetworkDataFetch{
             switch result{
             
             case .success(let data):
-               
+               let image = UIImage(data: data)
                 do{
                     let schedule = try JSONDecoder().decode(ScheduleModel.self, from: data)
                     responce(schedule,nil)

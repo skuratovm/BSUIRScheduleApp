@@ -36,16 +36,36 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(setInfo(_:)), name: Notification.Name("extra"), object: nil)
-
+       
          }
+    func configureImage(imageURLString: String?){
+        if let urlString = imageURLString{
+            NetworkRequest.shared.requestData(urlString: urlString) { [weak self] result in
+                switch result{
+                case .success(let data):
+                    let image = UIImage(data: data)
+                    self?.teacherImageView.image = image
+                case .failure(let error):
+                    self?.teacherImageView.image = #imageLiteral(resourceName: "Teacher-PNG-Free-Image.png")
+                    print("No Image :\(error.localizedDescription)")
+                }
+            }
+        } else {
+            teacherImageView.image = #imageLiteral(resourceName: "Teacher-PNG-Free-Image.png")
+        }
+    }
+    
     @objc func setInfo(_ notification: Notification){
         let object = notification.object as! Array<Any>?
+        let imageUrl = object?[7] as? String
         subjectLabel.text = object?[1] as? String
         firstNameLabel.text = object?[3] as? String
         middleNameLabel.text = object?[5] as? String
         lastNameLabel.text = object?[4] as? String
         lessonTypeLabel.text = object?[2] as? String
         teacherDegree.text = object?[6] as? String
+        
+        configureImage(imageURLString: imageUrl)
         
         
     }
