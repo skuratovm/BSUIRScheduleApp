@@ -207,7 +207,7 @@
         <!--Start View Controller-->
         <scene sceneID="TMv-ks-IWG">
             <objects>
-                <viewController id="8GI-rg-5pe" customClass="StartViewController" customModule="bsuir_Json_parse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Start" id="8GI-rg-5pe" customClass="StartViewController" customModule="bsuir_Json_parse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m5A-OH-25D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
