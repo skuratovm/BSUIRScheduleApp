@@ -14,16 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let resultMemoryArray = DataBase.shared.schedules
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        let mainVC  = storyboard.instantiateViewController(withIdentifier: "scheduleVC") as! ViewController
-        let startVC = storyboard.instantiateViewController(withIdentifier: "Start") as! StartViewController
-        if resultMemoryArray?.isEmpty == true{
-            window.rootViewController = startVC
-        } else {
-            window.rootViewController = mainVC
-        }
+        
         return true
     }
 
