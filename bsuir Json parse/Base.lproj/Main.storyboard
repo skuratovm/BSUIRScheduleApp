@@ -162,17 +162,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Chn-ca-0vt">
+                                <rect key="frame" x="358" y="73" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="B2a-5b-kQY"/>
+                                    <constraint firstAttribute="width" constant="36" id="yzJ-O7-pVc"/>
+                                </constraints>
+                                <color key="color" systemColor="systemGreenColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="E3d-Q7-a9k"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="E3d-Q7-a9k" firstAttribute="trailing" secondItem="Chn-ca-0vt" secondAttribute="trailing" constant="20" id="TDK-aF-6tr"/>
                             <constraint firstItem="uCY-9U-HWA" firstAttribute="centerY" secondItem="n9a-YL-SMZ" secondAttribute="centerY" constant="-180" id="cAj-Op-CG1"/>
                             <constraint firstItem="uCY-9U-HWA" firstAttribute="centerX" secondItem="n9a-YL-SMZ" secondAttribute="centerX" id="xd9-f1-ERE"/>
+                            <constraint firstItem="Chn-ca-0vt" firstAttribute="top" secondItem="E3d-Q7-a9k" secondAttribute="top" constant="29" id="xo5-Fv-lcZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Lesson" largeTitleDisplayMode="always" id="Jbd-SA-3PP"/>
                     <connections>
                         <outlet property="firstNameLabel" destination="RRf-vc-Dcr" id="f96-cz-E7s"/>
+                        <outlet property="imageDownloadIndicator" destination="Chn-ca-0vt" id="hqd-Ic-eBI"/>
                         <outlet property="indicatorView" destination="N8L-8z-bg8" id="7aW-T1-lPg"/>
                         <outlet property="lastNameLabel" destination="ZYQ-oT-P2r" id="gom-0b-UyU"/>
                         <outlet property="lessonTypeLabel" destination="SH0-PQ-7DN" id="Zcz-dr-erH"/>

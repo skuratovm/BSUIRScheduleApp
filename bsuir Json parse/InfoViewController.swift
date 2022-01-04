@@ -9,6 +9,7 @@ import UIKit
 
 class InfoViewController: UIViewController {
 
+    @IBOutlet weak var imageDownloadIndicator: UIActivityIndicatorView!
     @IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet weak var lessonTypeLabel: UILabel!
     @IBOutlet weak var teacherImageView: UIImageView!{
@@ -35,8 +36,8 @@ class InfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageDownloadIndicator.startAnimating()
         NotificationCenter.default.addObserver(self, selector: #selector(setInfo(_:)), name: Notification.Name("extra"), object: nil)
-       
          }
     func configureImage(imageURLString: String?){
         if let urlString = imageURLString{
@@ -49,6 +50,7 @@ class InfoViewController: UIViewController {
                     self?.teacherImageView.image = #imageLiteral(resourceName: "Teacher-PNG-Free-Image.png")
                     print("No Image :\(error.localizedDescription)")
                 }
+                self?.imageDownloadIndicator.stopAnimating()
             }
         } else {
             teacherImageView.image = #imageLiteral(resourceName: "Teacher-PNG-Free-Image.png")
@@ -67,9 +69,7 @@ class InfoViewController: UIViewController {
         lastNameLabel.text = object?[4] as? String
         lessonTypeLabel.text = object?[2] as? String
         teacherDegree.text = object?[6] as? String
-        
         configureImage(imageURLString: imageUrl)
-        
         
     }
     
