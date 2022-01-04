@@ -205,17 +205,26 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
         vc.modalPresentationStyle = .formSheet
-        let objectEmpID:Int = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].id)!
+        let empArray = resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee
         let objectSubj:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].subject)!
-        let objectSubjType:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].lessonType)!.rawValue
-        let objectEmpFN:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].firstName)!
-        let objectEmpLN:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].lastName)!
-        let objectEmpMN:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].middleName)!
-        let objectEmpD:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].degree)!.rawValue
-        let objectEmpPhoto:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].photoLink)!
-        let objectArray:[Any] = [objectEmpID ?? "",objectSubj ?? "",objectSubjType ?? "",objectEmpFN ?? "",objectEmpLN ?? "",objectEmpMN ?? "",objectEmpD ?? "",objectEmpPhoto ?? ""]
-        present(vc, animated: true,completion: nil)
-                NotificationCenter.default.post(name: Notification.Name("extra"), object: objectArray)
+               let objectSubjType:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].lessonType)!.rawValue
+        if empArray?.isEmpty == false{
+            let objectEmpID:Int = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].id)!
+                  
+                   let objectEmpFN:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].firstName)!
+                   let objectEmpLN:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].lastName)!
+                   let objectEmpMN:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].middleName)!
+                   let objectEmpD:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].degree)!.rawValue
+                   let objectEmpPhoto:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].photoLink)!
+            let objectArray:[Any] = [objectEmpID ?? "",objectSubj ?? "",objectSubjType ?? "",objectEmpFN ?? "",objectEmpLN ?? "",objectEmpMN ?? "",objectEmpD ?? "",objectEmpPhoto ?? ""]
+                   present(vc, animated: true,completion: nil)
+                           NotificationCenter.default.post(name: Notification.Name("extra"), object: objectArray)
+            
+        } else {
+            return
+        }
+       
+       
     }
     
 
