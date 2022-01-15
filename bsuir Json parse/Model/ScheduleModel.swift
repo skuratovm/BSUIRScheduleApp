@@ -17,7 +17,7 @@ struct ScheduleModel: Codable {
   
     let employee: JSONNull?
     let studentGroup: StudentGroup
-    let schedules, examSchedules: [ExamScheduleElement]
+    let schedules, examSchedules: [ExamScheduleElement]?
     let todayDate: String
     let todaySchedules: [TodayScheduleElement]
     let tomorrowDate: String
