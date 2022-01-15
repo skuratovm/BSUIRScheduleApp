@@ -94,7 +94,9 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "CellTableViewCell", bundle: nil), forCellReuseIdentifier: "InfoCell")
         // Do any additional setup after loading the view
-        
+        if resultMemoryArray?.isEmpty == false{
+            resultMemory = DataBase.shared.schedules?[0]
+        }
        
       
 

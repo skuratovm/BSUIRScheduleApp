@@ -64,6 +64,7 @@ class InfoViewController: UIViewController {
         
         teacherImageView.image = #imageLiteral(resourceName: "Teacher-PNG-Free-Image.png")
         subjectLabel.text = object?[1] as? String
+        
         firstNameLabel.text = object?[3] as? String
         middleNameLabel.text = object?[5] as? String
         lastNameLabel.text = object?[4] as? String
