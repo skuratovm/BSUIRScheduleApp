@@ -126,7 +126,7 @@ class ViewController: UIViewController {
 extension ViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let result = resultMemory{
-            return result.schedules?[section].schedule.count ?? 0
+            return result.schedules[section].schedule.count ?? 0
             
         }
         return 0
@@ -139,7 +139,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
   
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return resultMemory?.schedules?.count ?? 0
+        return resultMemory?.schedules.count ?? 0
         
     }
     
@@ -150,40 +150,40 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
 //        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath) as! CellTableViewCell
      //secure subjtext
-        var subjtext = (resultMemory?.schedules?[indexPath.section].schedule[indexPath.row].subject)
+        var subjtext = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].subject)
         if subjtext == nil{
-            subjtext = (result?.schedules?[indexPath.section].schedule[indexPath.row].subject)
+            subjtext = (result?.schedules[indexPath.section].schedule[indexPath.row].subject)
         }
     //secure sttimetext
         
-        var sttimetxt = resultMemory?.schedules?[indexPath.section].schedule[indexPath.row].startLessonTime
+        var sttimetxt = resultMemory?.schedules[indexPath.section].schedule[indexPath.row].startLessonTime
         if sttimetxt == nil{
-            sttimetxt = (result?.schedules?[indexPath.section].schedule[indexPath.row].startLessonTime)!
+            sttimetxt = (result?.schedules[indexPath.section].schedule[indexPath.row].startLessonTime)!
         }
         
      //secure endtimetext
         
-        var endTimeTxt = resultMemory?.schedules?[indexPath.section].schedule[indexPath.row].endLessonTime
+        var endTimeTxt = resultMemory?.schedules[indexPath.section].schedule[indexPath.row].endLessonTime
         if endTimeTxt == nil{
-            endTimeTxt = result?.schedules?[indexPath.section].schedule[indexPath.row].endLessonTime
+            endTimeTxt = result?.schedules[indexPath.section].schedule[indexPath.row].endLessonTime
         }
         
     // secure lessontype
         
-        var lessonTypeTxt = resultMemory?.schedules?[indexPath.section].schedule[indexPath.row].lessonType.rawValue
+        var lessonTypeTxt = resultMemory?.schedules[indexPath.section].schedule[indexPath.row].lessonType.rawValue
         if lessonTypeTxt == nil{
-            lessonTypeTxt = result?.schedules?[indexPath.section].schedule[indexPath.row].lessonType.rawValue
+            lessonTypeTxt = result?.schedules[indexPath.section].schedule[indexPath.row].lessonType.rawValue
         }
        var teacherTxt = ""
-        if resultMemory?.schedules?[indexPath.section].schedule[indexPath.row].employee.indices.contains(0) == true {
-            teacherTxt =  (resultMemory?.schedules?[indexPath.section].schedule[indexPath.row].employee[0].fio)!
+        if resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee.indices.contains(0) == true {
+            teacherTxt =  (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].fio)!
             
         }
         var classRoomTxt = ""
 //        classRoomTxt = (result?.schedules[indexPath.section].schedule[indexPath.row].auditory[0])!
         
-        if resultMemory?.schedules?[indexPath.section].schedule[indexPath.row].auditory.indices.contains(0) == true{
-            classRoomTxt = (resultMemory?.schedules?[indexPath.section].schedule[indexPath.row].auditory[0])!
+        if resultMemory?.schedules[indexPath.section].schedule[indexPath.row].auditory.indices.contains(0) == true{
+            classRoomTxt = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].auditory[0])!
         }
         
         
@@ -204,24 +204,24 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return resultMemory?.schedules?[section].weekDay
+        return resultMemory?.schedules[section].weekDay
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
         vc.modalPresentationStyle = .formSheet
-        let empArray = resultMemory?.schedules?[indexPath.section].schedule[indexPath.row].employee
-        let objectSubj:String = (resultMemory?.schedules?[indexPath.section].schedule[indexPath.row].subject)!
-        let objectSubjType:String = (resultMemory?.schedules?[indexPath.section].schedule[indexPath.row].lessonType)!.rawValue
+        let empArray = resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee
+        let objectSubj:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].subject)!
+        let objectSubjType:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].lessonType)!.rawValue
         if empArray?.isEmpty == false{
-            let objectEmpID:Int = (resultMemory?.schedules?[indexPath.section].schedule[indexPath.row].employee[0].id)!
+            let objectEmpID:Int = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].id)!
                   
-            let objectEmpFN:String = (resultMemory?.schedules?[indexPath.section].schedule[indexPath.row].employee[0].firstName)!
-            let objectEmpLN:String = (resultMemory?.schedules?[indexPath.section].schedule[indexPath.row].employee[0].lastName)!
-            let objectEmpMN:String = (resultMemory?.schedules?[indexPath.section].schedule[indexPath.row].employee[0].middleName)!
-            let objectEmpD:String = (resultMemory?.schedules?[indexPath.section].schedule[indexPath.row].employee[0].degree)!.rawValue
-            let objectEmpPhoto:String = (resultMemory?.schedules?[indexPath.section].schedule[indexPath.row].employee[0].photoLink)!
+            let objectEmpFN:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].firstName)!
+            let objectEmpLN:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].lastName)!
+            let objectEmpMN:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].middleName)!
+            let objectEmpD:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].degree)!
+            let objectEmpPhoto:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].photoLink)!
             let objectArray:[Any] = [objectEmpID ?? "",objectSubj ?? "",objectSubjType ?? "",objectEmpFN ?? "",objectEmpLN ?? "",objectEmpMN ?? "",objectEmpD ?? "",objectEmpPhoto ?? ""]
                    present(vc, animated: true,completion: nil)
                            NotificationCenter.default.post(name: Notification.Name("extra"), object: objectArray)
