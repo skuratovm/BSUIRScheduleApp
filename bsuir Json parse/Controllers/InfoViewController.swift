@@ -6,8 +6,12 @@
 //
 
 import UIKit
+protocol MainViewControllerDelegate{
+    func toggleMenu()
+}
 
 class InfoViewController: UIViewController {
+    var delegate: MainViewControllerDelegate?
 
     @IBOutlet weak var imageDownloadIndicator: UIActivityIndicatorView!
     @IBOutlet weak var subjectLabel: UILabel!
@@ -71,4 +75,9 @@ class InfoViewController: UIViewController {
         teacherDegree.text = object?[6] as? String
         configureImage(imageURLString: imageUrl)
     }
+    
+    @IBAction func closeButtonAction(_ sender: UIButton) {
+        delegate?.toggleMenu()
+    }
+    
 }

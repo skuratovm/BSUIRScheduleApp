@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		402ED55F27931FAC00B5E7CE /* unnamed (2).jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 402ED55E27931FAC00B5E7CE /* unnamed (2).jpeg */; };
+		402ED5622793335100B5E7CE /* OOjs_UI_icon_close.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 402ED5612793335100B5E7CE /* OOjs_UI_icon_close.svg.png */; };
 		4065F2F82792ECCC009D7BBD /* Setting Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065F2F72792ECCC009D7BBD /* Setting Functions.swift */; };
 		408FE32F2774B3F4004A1DA9 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FE32E2774B3F4004A1DA9 /* Alerts.swift */; };
 		409283A42751453F00918185 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409283A32751453F00918185 /* InfoViewController.swift */; };
@@ -25,11 +26,13 @@
 		40ACF170274C3C5800BF2BD5 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ACF16F274C3C5800BF2BD5 /* ScheduleModel.swift */; };
 		40ACF174274CE1A100BF2BD5 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ACF173274CE1A000BF2BD5 /* NetworkRequest.swift */; };
 		40ACF177274CEC4F00BF2BD5 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ACF176274CEC4F00BF2BD5 /* NetworkDataFetch.swift */; };
+		40EA307527935C29001BE924 /* UIViewController extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA307427935C29001BE924 /* UIViewController extension.swift */; };
 		40F6E68D2773E8ED003FAB3F /* UIButton extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6E68C2773E8ED003FAB3F /* UIButton extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		402ED55E27931FAC00B5E7CE /* unnamed (2).jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "unnamed (2).jpeg"; path = "../../../unnamed (2).jpeg"; sourceTree = "<group>"; };
+		402ED5612793335100B5E7CE /* OOjs_UI_icon_close.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OOjs_UI_icon_close.svg.png; path = ../../../OOjs_UI_icon_close.svg.png; sourceTree = "<group>"; };
 		4065F2F72792ECCC009D7BBD /* Setting Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Setting Functions.swift"; sourceTree = "<group>"; };
 		408FE32E2774B3F4004A1DA9 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		409283A32751453F00918185 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 		40ACF173274CE1A000BF2BD5 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		40ACF176274CEC4F00BF2BD5 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 		40B137E42784E280004322D9 /* pngfind.com-refresh-icon-png-transparent-4296335.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pngfind.com-refresh-icon-png-transparent-4296335.png"; sourceTree = "<group>"; };
+		40EA307427935C29001BE924 /* UIViewController extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController extension.swift"; sourceTree = "<group>"; };
 		40F6E68C2773E8ED003FAB3F /* UIButton extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton extension.swift"; sourceTree = "<group>"; };
 		40FA817E27931D83000F0F9A /* unnamed (2).jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "unnamed (2).jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				40F6E68C2773E8ED003FAB3F /* UIButton extension.swift */,
+				40EA307427935C29001BE924 /* UIViewController extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 		409283AB27514A7800918185 /* Image Set */ = {
 			isa = PBXGroup;
 			children = (
+				402ED5612793335100B5E7CE /* OOjs_UI_icon_close.svg.png */,
 				409283AC27514A9D00918185 /* Teacher-PNG-Free-Image.png */,
 				40FA817E27931D83000F0F9A /* unnamed (2).jpeg */,
 				402ED55E27931FAC00B5E7CE /* unnamed (2).jpeg */,
@@ -235,6 +241,7 @@
 				40ACF16D274BFBD400BF2BD5 /* CellTableViewCell.xib in Resources */,
 				40ACF15F274BFB3300BF2BD5 /* Assets.xcassets in Resources */,
 				40ACF15D274BFB2E00BF2BD5 /* Main.storyboard in Resources */,
+				402ED5622793335100B5E7CE /* OOjs_UI_icon_close.svg.png in Resources */,
 				409283AD27514A9D00918185 /* Teacher-PNG-Free-Image.png in Resources */,
 				402ED55F27931FAC00B5E7CE /* unnamed (2).jpeg in Resources */,
 			);
@@ -249,6 +256,7 @@
 			files = (
 				4065F2F82792ECCC009D7BBD /* Setting Functions.swift in Sources */,
 				40ACF15A274BFB2E00BF2BD5 /* ViewController.swift in Sources */,
+				40EA307527935C29001BE924 /* UIViewController extension.swift in Sources */,
 				40ACF16C274BFBD400BF2BD5 /* CellTableViewCell.swift in Sources */,
 				40ACF177274CEC4F00BF2BD5 /* NetworkDataFetch.swift in Sources */,
 				40ACF170274C3C5800BF2BD5 /* ScheduleModel.swift in Sources */,

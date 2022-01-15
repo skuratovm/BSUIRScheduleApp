@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8GI-rg-5pe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IhT-TT-SdQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -135,11 +135,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8L-8z-bg8">
-                                <rect key="frame" x="20" y="118" width="15" height="744"/>
+                                <rect key="frame" x="20" y="118" width="15" height="346"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="ZnQ-Up-ahs"/>
-                                    <constraint firstAttribute="height" constant="744" id="zUT-fi-cqO"/>
+                                    <constraint firstAttribute="height" constant="346" id="zUT-fi-cqO"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teacher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BD1-K6-Tqm">
@@ -174,10 +174,25 @@
                                     <constraint firstAttribute="width" constant="140" id="HvN-vd-Z6B"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3S-25-73q">
+                                <rect key="frame" x="342" y="62" width="54" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="NWd-3Z-fjf"/>
+                                    <constraint firstAttribute="height" constant="51" id="gEO-4L-U16"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="xmark" catalog="system" symbolScale="large" renderingMode="original"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonAction:" destination="vvY-bJ-B57" eventType="touchUpInside" id="UUn-mz-L4H"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="E3d-Q7-a9k"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="E3d-Q7-a9k" firstAttribute="trailing" secondItem="X3S-25-73q" secondAttribute="trailing" constant="18" id="1G1-iV-xKH"/>
                             <constraint firstItem="uCY-9U-HWA" firstAttribute="top" secondItem="SH0-PQ-7DN" secondAttribute="bottom" constant="79" id="1UU-Qy-Oqu"/>
                             <constraint firstItem="SH0-PQ-7DN" firstAttribute="top" secondItem="E3d-Q7-a9k" secondAttribute="top" constant="29" id="372-iU-GTY"/>
                             <constraint firstItem="ZYQ-oT-P2r" firstAttribute="top" secondItem="uCY-9U-HWA" secondAttribute="bottom" constant="18" id="4qd-0b-mfl"/>
@@ -185,6 +200,7 @@
                             <constraint firstItem="uCY-9U-HWA" firstAttribute="centerX" secondItem="n9a-YL-SMZ" secondAttribute="centerX" id="ArW-B9-7Mc"/>
                             <constraint firstItem="UZg-K4-Omf" firstAttribute="centerX" secondItem="n9a-YL-SMZ" secondAttribute="centerX" id="BCy-IV-gM9"/>
                             <constraint firstItem="zxj-Hn-gqX" firstAttribute="leading" secondItem="E3d-Q7-a9k" secondAttribute="leading" constant="20" id="ESo-SQ-tNN"/>
+                            <constraint firstItem="X3S-25-73q" firstAttribute="top" secondItem="E3d-Q7-a9k" secondAttribute="top" constant="18" id="NPR-Qy-0s9"/>
                             <constraint firstItem="emh-VT-Cl1" firstAttribute="top" secondItem="RRf-vc-Dcr" secondAttribute="bottom" constant="-1" id="PQs-kH-yCb"/>
                             <constraint firstItem="emh-VT-Cl1" firstAttribute="centerX" secondItem="n9a-YL-SMZ" secondAttribute="centerX" id="SA4-cL-c6I"/>
                             <constraint firstItem="E3d-Q7-a9k" firstAttribute="trailing" secondItem="Chn-ca-0vt" secondAttribute="trailing" constant="20" id="TDK-aF-6tr"/>
@@ -244,8 +260,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p2h-OB-w5r">
-                                <rect key="frame" x="144" y="171" width="130" height="130"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p2h-OB-w5r">
+                                <rect key="frame" x="142" y="171" width="130" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="Dns-n6-hAd"/>
                                     <constraint firstAttribute="width" constant="130" id="or8-Ke-4cV"/>
@@ -308,6 +324,7 @@
     </scenes>
     <resources>
         <image name="pngfind.com-refresh-icon-png-transparent-4296335.png" width="980" height="938"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

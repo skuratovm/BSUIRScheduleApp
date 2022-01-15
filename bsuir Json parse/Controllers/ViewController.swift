@@ -6,18 +6,24 @@
 //
 import UIKit
 
-class ViewController: UIViewController {
+
+class ViewController: UIViewController,MainViewControllerDelegate {
+    
+    var mainViewController: UIViewController!
+    var infoViewController: UIViewController!
+    var isMove = false
+    
     var result: ScheduleModel?
+    var delegate: MainViewControllerDelegate?
     
     var resultMemoryArray = DataBase.shared.schedules
     var resultMemory: ScheduleModel?
     var groupNumber:String = ""
+    
    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var groupTextLabel: UILabel!
-    
-    let GroupSection = ["Понедельник","Вторник","Среда", "Четверг","Пятница","Суббота"]
    
     private func fetchSchedule(groupNumber: String){
         //activityIndicator.startAnimating()
@@ -81,6 +87,59 @@ class ViewController: UIViewController {
               }
         print("📍:\(resultMemory):📍")
     }
+    func configureInfoViewController(){
+        let vc = storyboard?.instantiateViewController(withIdentifier: "InfoViewController")
+        let vcView = vc?.view
+        vcView?.layer.cornerRadius = 40
+        vcView?.layer.borderWidth = 2
+        vcView?.layer.borderColor = UIColor.lightGray.cgColor
+        vcView?.frame = CGRect(x: 1, y: 0, width: 412, height: 495)
+        infoViewController = vc
+        
+        addChild(infoViewController)
+        view.insertSubview(infoViewController.view, at: 1)
+        infoViewController.didMove(toParent: self)
+        
+    }
+    func showInfoViewController(shouldMove: Bool) {
+        if shouldMove {
+            // показываем menu
+            UIView.animate(withDuration: 0.5,
+                           delay: 0,
+                           usingSpringWithDamping: 0.8,
+                           initialSpringVelocity: 0,
+                           options: .curveEaseInOut, animations: {
+                            self.infoViewController.view.frame.origin.y = self.infoViewController.view.frame.origin.y + 400
+                           })
+//        } else {
+//            // убираем menu
+//            UIView.animate(withDuration: 0.5,
+//                           delay: 0,
+//                           usingSpringWithDamping: 0.8,
+//                           initialSpringVelocity: 0,
+//                           options: .curveEaseInOut,
+//                           animations: {
+//                            self.infoViewController.view.frame.origin.y = 0
+//            }) { (finished) in
+//
+////                self.menuViewController.willMove(toParent: nil)
+////                self.menuViewController.view.removeFromSuperview()
+////                self.menuViewController.removeFromParent()
+//                self.infoViewController.remove()
+//                print("Удалили menuViewController")
+//            }
+        }
+    }
+    
+    func toggleMenu() {
+        
+        if !isMove {
+            configureInfoViewController()
+        }
+        isMove = !isMove
+       showInfoViewController(shouldMove: isMove)
+    }
+    
 }
 
 extension ViewController:UITableViewDelegate,UITableViewDataSource{
@@ -152,11 +211,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
-        self.addChild(vc)
-        vc.view.frame = CGRect(x: 1, y: 450, width: 412, height: 430)
-        vc.view.layer.cornerRadius = 20
-        vc.view.layer.borderWidth = 1
-        vc.view.layer.borderColor = UIColor.lightGray.cgColor
+       
         let empArray = resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee
         let objectSubj:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].subject)!
         let objectSubjType:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].lessonType)!.rawValue
@@ -169,11 +224,8 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
             let objectEmpD:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].degree)!
             let objectEmpPhoto:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].photoLink)!
             let objectArray:[Any] = [objectEmpID ?? "",objectSubj ?? "",objectSubjType ?? "",objectEmpFN ?? "",objectEmpLN ?? "",objectEmpMN ?? "",objectEmpD ?? "",objectEmpPhoto ?? ""]
-            self.view.addSubview(vc.view)
-            vc.didMove(toParent: self)
-            //present(vc, animated: true, completion: nil)
-            //self.view.addSubview(newview)
-                           NotificationCenter.default.post(name: Notification.Name("extra"), object: objectArray)
+            toggleMenu()
+            NotificationCenter.default.post(name: Notification.Name("extra"), object: objectArray)
             
         } else {
             return
