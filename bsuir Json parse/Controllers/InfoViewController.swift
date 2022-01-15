@@ -61,10 +61,11 @@ class InfoViewController: UIViewController {
         let object = notification.object as!
             Array<Any>?
         let imageUrl = object?[7] as? String
-        
+        let lessonType = object?[2] as? String
         teacherImageView.image = #imageLiteral(resourceName: "Teacher-PNG-Free-Image.png")
-        subjectLabel.text = object?[1] as? String
+        SetUpInticatorView.shared.configureIndicatorView(lessonType: lessonType!,indicatorView: indicatorView)
         
+        subjectLabel.text = object?[1] as? String
         firstNameLabel.text = object?[3] as? String
         middleNameLabel.text = object?[5] as? String
         lastNameLabel.text = object?[4] as? String
