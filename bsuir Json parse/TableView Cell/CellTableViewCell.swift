@@ -44,15 +44,7 @@ class CellTableViewCell: UITableViewCell {
         endTimelabel.text = endtimetxt
         weakDayL.text = lessonType
         
-        if lessonType == "ЛК"{
-            indicatorView.backgroundColor = .systemGreen
-        }
-        if lessonType == "ПЗ"{
-            indicatorView.backgroundColor = .systemYellow
-        }
-        if lessonType == "ЛР"{
-            indicatorView.backgroundColor = .systemBlue
-        }
+        SetUpInticatorView.shared.configureIndicatorView(lessonType: lessonType,indicatorView: indicatorView)
         
         
 //
