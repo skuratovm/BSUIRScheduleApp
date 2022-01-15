@@ -23,8 +23,6 @@ class CellTableViewCell: UITableViewCell {
     @IBOutlet weak var starTimeLabel: UILabel!
     @IBOutlet weak var endTimelabel: UILabel!
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -36,19 +34,13 @@ class CellTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func configureCell(subjtext: String ,sttimetxt: String,endtimetxt: String, classRoomTxt: String,teacherTxt: String, lessonType: String) {
-        
         self.subjectLabel.text = subjtext
         self.classRoomLabel.text = classRoomTxt
         teacherLabel.text = teacherTxt
         starTimeLabel.text = sttimetxt
         endTimelabel.text = endtimetxt
         weakDayL.text = lessonType
-        
         SetUpInticatorView.shared.configureIndicatorView(lessonType: lessonType,indicatorView: indicatorView)
-        
-        
-//
-        
     }
     
 }

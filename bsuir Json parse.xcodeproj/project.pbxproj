@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		402ED55F27931FAC00B5E7CE /* unnamed (2).jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 402ED55E27931FAC00B5E7CE /* unnamed (2).jpeg */; };
 		4065F2F82792ECCC009D7BBD /* Setting Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065F2F72792ECCC009D7BBD /* Setting Functions.swift */; };
 		408FE32F2774B3F4004A1DA9 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FE32E2774B3F4004A1DA9 /* Alerts.swift */; };
 		409283A42751453F00918185 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409283A32751453F00918185 /* InfoViewController.swift */; };
 		409283A82751479B00918185 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409283A72751479B00918185 /* UserDefaultsManager.swift */; };
 		409283AD27514A9D00918185 /* Teacher-PNG-Free-Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 409283AC27514A9D00918185 /* Teacher-PNG-Free-Image.png */; };
 		40931A56277253C000C28391 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40931A55277253C000C28391 /* StartViewController.swift */; };
-		40931A5A277258EB00C28391 /* unnamed (2).jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 40931A59277258EB00C28391 /* unnamed (2).jpeg */; };
 		40ACF156274BFB2E00BF2BD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ACF155274BFB2E00BF2BD5 /* AppDelegate.swift */; };
 		40ACF158274BFB2E00BF2BD5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ACF157274BFB2E00BF2BD5 /* SceneDelegate.swift */; };
 		40ACF15A274BFB2E00BF2BD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ACF159274BFB2E00BF2BD5 /* ViewController.swift */; };
@@ -29,13 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		402ED55E27931FAC00B5E7CE /* unnamed (2).jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "unnamed (2).jpeg"; path = "../../../unnamed (2).jpeg"; sourceTree = "<group>"; };
 		4065F2F72792ECCC009D7BBD /* Setting Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Setting Functions.swift"; sourceTree = "<group>"; };
 		408FE32E2774B3F4004A1DA9 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		409283A32751453F00918185 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		409283A72751479B00918185 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		409283AC27514A9D00918185 /* Teacher-PNG-Free-Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Teacher-PNG-Free-Image.png"; path = "../../../Teacher-PNG-Free-Image.png"; sourceTree = "<group>"; };
 		40931A55277253C000C28391 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		40931A59277258EB00C28391 /* unnamed (2).jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "unnamed (2).jpeg"; path = "../../unnamed (2).jpeg"; sourceTree = "<group>"; };
 		40ACF152274BFB2E00BF2BD5 /* bsuir Json parse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bsuir Json parse.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40ACF155274BFB2E00BF2BD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40ACF157274BFB2E00BF2BD5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +51,7 @@
 		40ACF176274CEC4F00BF2BD5 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 		40B137E42784E280004322D9 /* pngfind.com-refresh-icon-png-transparent-4296335.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pngfind.com-refresh-icon-png-transparent-4296335.png"; sourceTree = "<group>"; };
 		40F6E68C2773E8ED003FAB3F /* UIButton extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton extension.swift"; sourceTree = "<group>"; };
+		40FA817E27931D83000F0F9A /* unnamed (2).jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "unnamed (2).jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				409283AC27514A9D00918185 /* Teacher-PNG-Free-Image.png */,
+				40FA817E27931D83000F0F9A /* unnamed (2).jpeg */,
+				402ED55E27931FAC00B5E7CE /* unnamed (2).jpeg */,
 				40B137E42784E280004322D9 /* pngfind.com-refresh-icon-png-transparent-4296335.png */,
 			);
 			path = "Image Set";
@@ -153,7 +156,6 @@
 				4065F2F62792EC4B009D7BBD /* Setting Function */,
 				40ACF155274BFB2E00BF2BD5 /* AppDelegate.swift */,
 				40ACF157274BFB2E00BF2BD5 /* SceneDelegate.swift */,
-				40931A59277258EB00C28391 /* unnamed (2).jpeg */,
 				40ACF15B274BFB2E00BF2BD5 /* Main.storyboard */,
 				40ACF15E274BFB3300BF2BD5 /* Assets.xcassets */,
 				40ACF160274BFB3300BF2BD5 /* LaunchScreen.storyboard */,
@@ -234,7 +236,7 @@
 				40ACF15F274BFB3300BF2BD5 /* Assets.xcassets in Resources */,
 				40ACF15D274BFB2E00BF2BD5 /* Main.storyboard in Resources */,
 				409283AD27514A9D00918185 /* Teacher-PNG-Free-Image.png in Resources */,
-				40931A5A277258EB00C28391 /* unnamed (2).jpeg in Resources */,
+				402ED55F27931FAC00B5E7CE /* unnamed (2).jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

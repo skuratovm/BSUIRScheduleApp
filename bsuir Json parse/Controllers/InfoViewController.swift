@@ -24,10 +24,6 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var middleNameLabel: UILabel!
     @IBOutlet weak var teacherDegree: UILabel!
-    
-    
-    
-    
     @IBOutlet weak var indicatorView: UIView!{
         didSet{
             indicatorView.layer.cornerRadius = 7
@@ -39,6 +35,8 @@ class InfoViewController: UIViewController {
         imageDownloadIndicator.startAnimating()
         NotificationCenter.default.addObserver(self, selector: #selector(setInfo(_:)), name: Notification.Name("extra"), object: nil)
          }
+    
+   
     func configureImage(imageURLString: String?){
         if let urlString = imageURLString{
             NetworkRequest.shared.requestData(urlString: urlString) { [weak self] result in
@@ -72,7 +70,5 @@ class InfoViewController: UIViewController {
         lessonTypeLabel.text = object?[2] as? String
         teacherDegree.text = object?[6] as? String
         configureImage(imageURLString: imageUrl)
-        
     }
-    
 }

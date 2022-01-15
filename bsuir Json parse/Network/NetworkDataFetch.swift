@@ -16,13 +16,11 @@ class NetworkDataFetch{
     func FetchSchedule(urlString: String, responce: @escaping(ScheduleModel?,Error?) -> Void){
         NetworkRequest.shared.requestData(urlString: urlString) { result in
             switch result{
-            
             case .success(let data):
                let image = UIImage(data: data)
                 do{
                     let schedule = try JSONDecoder().decode(ScheduleModel.self, from: data)
                     responce(schedule,nil)
-                    
                 }catch let jsonError{
                     print("Failed to decode json",jsonError)
                 }

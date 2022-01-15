@@ -9,9 +9,6 @@ import Foundation
 
 class DataBase{
     static let shared = DataBase()
-   
-    //let cardKey = settingsKeys.card.rawValue
-
     let defaults = UserDefaults.standard
 
     var schedules:[ScheduleModel]? {

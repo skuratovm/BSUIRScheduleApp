@@ -4,7 +4,6 @@
 //
 //  Created by Mikhail Skuratov on 22.11.21.
 //
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -14,27 +13,12 @@ class ViewController: UIViewController {
     var resultMemory: ScheduleModel?
     var groupNumber:String = ""
    
-    
-        
-  
-    
-   
-    //var resultMemoryIsExist = DataBase.shared.schedules?.indices.contains(0)
-    
-    
-    
-    
-
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var groupTextLabel: UILabel!
     
     let GroupSection = ["Понедельник","Вторник","Среда", "Четверг","Пятница","Суббота"]
-   // var schedules = [ExamScheduleElement]()
-//    var subjs = [TodayScheduleElement]()
-    
-    
-    
+   
     private func fetchSchedule(groupNumber: String){
         //activityIndicator.startAnimating()
         refreshButtonOutlet.rotate()
@@ -57,12 +41,8 @@ class ViewController: UIViewController {
             } else {
                 self?.errorArlert(title: "Ошибка соединения!", message: "Проверьте подкрлючение к инернету и попробуйте еще раз.")
                 print("❌\(error?.localizedDescription)")
-               
             }
         }
-        
-        
-      
     }
     @objc func alertRefresh(_ notification: Notification){
         fetchSchedule(groupNumber: groupNumber)
@@ -78,18 +58,10 @@ class ViewController: UIViewController {
     
     @IBAction func refreshButtonAction(_ sender: UIButton) {
         fetchSchedule(groupNumber: groupNumber)
-        //refreshButtonOutlet.rotate()
-       
-       
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        
-        //var groupNumber = 920605
-        
         NotificationCenter.default.addObserver(self, selector: #selector(setGroupNumberValue(_:)), name: Notification.Name("data"), object: nil)
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "CellTableViewCell", bundle: nil), forCellReuseIdentifier: "InfoCell")
@@ -97,48 +69,27 @@ class ViewController: UIViewController {
         if resultMemoryArray?.isEmpty == false{
             resultMemory = DataBase.shared.schedules?[0]
         }
-       
-      
-
-    
         NotificationCenter.default.addObserver(self, selector: #selector(alertRefresh(_:)), name: Notification.Name("ref"), object: nil)
-       
-        //print("🍄\(groupNumber)")
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         if resultMemoryArray?.isEmpty == false{
                   resultMemory = DataBase.shared.schedules?[0]
-                  
               } else {
 
                   fetchSchedule(groupNumber: groupNumber)
-                  
               }
         print("📍:\(resultMemory):📍")
     }
-   
-    
-    
-
-
 }
-
 
 extension ViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let result = resultMemory{
             return result.schedules[section].schedule.count ?? 0
-            
         }
         return 0
     }
-    
-    
-   
-    
-    
-  
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return resultMemory?.schedules.count ?? 0
@@ -146,10 +97,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if resultMemoryIsExist == true {
-//            var resultMemory = DataBase.shared.schedules?[0]
-//            tableView.reloadData()
-//        }
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath) as! CellTableViewCell
      //secure subjtext
         var subjtext = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].subject)
@@ -188,16 +136,8 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
             classRoomTxt = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].auditory[0])!
         }
         
-        
-       
-      
-       
-        //let weekDayTxt = (result?.schedules[indexPath.section].weekDay)!
-        
         print("😠\(subjtext)")
         cell.configureCell(subjtext: subjtext!, sttimetxt: sttimetxt!, endtimetxt: endTimeTxt!, classRoomTxt: classRoomTxt, teacherTxt: teacherTxt, lessonType: lessonTypeTxt! )
-       
-       
         return cell
     }
     
@@ -212,7 +152,11 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
-        vc.modalPresentationStyle = .formSheet
+        self.addChild(vc)
+        vc.view.frame = CGRect(x: 1, y: 450, width: 412, height: 430)
+        vc.view.layer.cornerRadius = 20
+        vc.view.layer.borderWidth = 1
+        vc.view.layer.borderColor = UIColor.lightGray.cgColor
         let empArray = resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee
         let objectSubj:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].subject)!
         let objectSubjType:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].lessonType)!.rawValue
@@ -225,22 +169,16 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
             let objectEmpD:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].degree)!
             let objectEmpPhoto:String = (resultMemory?.schedules[indexPath.section].schedule[indexPath.row].employee[0].photoLink)!
             let objectArray:[Any] = [objectEmpID ?? "",objectSubj ?? "",objectSubjType ?? "",objectEmpFN ?? "",objectEmpLN ?? "",objectEmpMN ?? "",objectEmpD ?? "",objectEmpPhoto ?? ""]
-                   present(vc, animated: true,completion: nil)
+            self.view.addSubview(vc.view)
+            vc.didMove(toParent: self)
+            //present(vc, animated: true, completion: nil)
+            //self.view.addSubview(newview)
                            NotificationCenter.default.post(name: Notification.Name("extra"), object: objectArray)
             
         } else {
             return
         }
-       
-       
     }
-    
-
-    
-   
-
-    
-    
 }
 
 

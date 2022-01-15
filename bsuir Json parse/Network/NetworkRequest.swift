@@ -22,11 +22,8 @@ class  NetworkRequest {
                     completion(.failure(error))
                     return
                     }
-                           
                 guard let data = data else {return}
                 completion(.success(data))
-              
-                
             }
            
         }.resume()

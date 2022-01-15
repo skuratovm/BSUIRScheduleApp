@@ -1,24 +1,87 @@
 //
-//  ScheduleModel.swift
+//  File.swift
 //  bsuir Json parse
 //
-//  Created by Mikhail Skuratov on 23.11.21.
+//  Created by Mikhail Skuratov on 15.01.22.
 //
+
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
+//
+//   let employeeScheduleModel = try? newJSONDecoder().decode(EmployeeScheduleModel.self, from: jsonData)
 
 import Foundation
 
-// MARK: - ScheduleModel
-struct ScheduleModel: Codable {
-    let employee: JSONNull?
-    let studentGroup: StudentGroup
+// MARK: - EmployeeScheduleModel
+struct EmployeeScheduleModel: Codable {
+    let employee: Employee
+    let studentGroup: JSONNull?
     let schedules, examSchedules: [ExamScheduleElement]
     let todayDate: String
     let todaySchedules: [JSONAny]
     let tomorrowDate: String
     let tomorrowSchedules: [JSONAny]
     let currentWeekNumber: Int
-    let dateStart, dateEnd: String
-    let sessionStart, sessionEnd: JSONNull?
+    let dateStart, dateEnd, sessionStart, sessionEnd: String
+}
+
+// MARK: - Employee
+struct Employee: Codable {
+    let firstName: FirstName
+    let lastName: LastName
+    let middleName: MiddleName
+    let degree: Degree
+    let rank: Rank
+    let photoLink: String
+    let calendarID: CalendarID
+    let academicDepartment: [AcademicDepartment]
+    let id: Int
+    let urlID: URLID
+    let fio: Fio
+
+    enum CodingKeys: String, CodingKey {
+        case firstName, lastName, middleName, degree, rank, photoLink
+        case calendarID = "calendarId"
+        case academicDepartment, id
+        case urlID = "urlId"
+        case fio
+    }
+}
+
+enum AcademicDepartment: String, Codable {
+    case кафИТАС = "каф.ИТАС"
+}
+
+enum CalendarID: String, Codable {
+    case tukiblo8N9Dag74Ps7871PadncGroupCalendarGoogleCOM = "tukiblo8n9dag74ps7871padnc@group.calendar.google.com"
+}
+
+enum Degree: String, Codable {
+    case кТН = "к.т.н."
+}
+
+enum Fio: String, Codable {
+    case жилякНАДоцент = "Жиляк Н. А. (доцент)"
+}
+
+enum FirstName: String, Codable {
+    case надежда = "Надежда"
+}
+
+enum LastName: String, Codable {
+    case жиляк = "Жиляк"
+}
+
+enum MiddleName: String, Codable {
+    case александровна = "Александровна"
+}
+
+enum Rank: String, Codable {
+    case доцент = "доцент"
+}
+
+enum URLID: String, Codable {
+    case nZhiliak = "n-zhiliak"
 }
 
 // MARK: - ExamScheduleElement
@@ -35,7 +98,7 @@ struct ExamScheduleSchedule: Codable {
     let auditory: [String]
     let lessonTime, startLessonTime, endLessonTime: String
     let gradebookLesson: JSONNull?
-    let subject: String
+    let subject: Subject
     let note: JSONNull?
     let lessonType: LessonType
     let employee: [Employee]
@@ -44,56 +107,15 @@ struct ExamScheduleSchedule: Codable {
     let gradebookLessonlist: JSONNull?
 }
 
-// MARK: - Employee
-struct Employee: Codable {
-    let firstName, lastName, middleName, degree: String
-    let rank: String?
-    let photoLink: String
-    let calendarID: String
-    let academicDepartment: [AcademicDepartment]
-    let id: Int
-    let urlID, fio: String
-
-    enum CodingKeys: String, CodingKey {
-        case firstName, lastName, middleName, degree, rank, photoLink
-        case calendarID = "calendarId"
-        case academicDepartment, id
-        case urlID = "urlId"
-        case fio
-    }
-}
-
-enum AcademicDepartment: String, Codable {
-    case кафИТАС = "каф.ИТАС"
-    case кафМенеджмента = "каф.менеджмента"
-}
-
 enum LessonType: String, Codable {
     case консультация = "Консультация"
     case лк = "ЛК"
-    case лр = "ЛР"
-    case пз = "ПЗ"
     case экзамен = "Экзамен"
 }
 
-// MARK: - StudentGroup
-struct StudentGroup: Codable {
-    let name: String
-    let facultyID: Int
-    let facultyName: JSONNull?
-    let specialityDepartmentEducationFormID: Int
-    let specialityName: JSONNull?
-    let course, id: Int
-    let calendarID: String
-
-    enum CodingKeys: String, CodingKey {
-        case name
-        case facultyID = "facultyId"
-        case facultyName
-        case specialityDepartmentEducationFormID = "specialityDepartmentEducationFormId"
-        case specialityName, course, id
-        case calendarID = "calendarId"
-    }
+enum Subject: String, Codable {
+    case аиПРП = "АиПРП"
+    case спо = "СПО"
 }
 
 // MARK: - Encode/decode helpers
@@ -341,3 +363,4 @@ class JSONAny: Codable {
         }
     }
 }
+
