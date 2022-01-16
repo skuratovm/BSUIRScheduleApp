@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -188,6 +189,17 @@
                                     <action selector="closeButtonAction:" destination="vvY-bJ-B57" eventType="touchUpInside" id="UUn-mz-L4H"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvL-BZ-47w">
+                                <rect key="frame" x="99.5" y="472" width="215" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="e3O-0M-vOI"/>
+                                    <constraint firstAttribute="width" constant="215" id="iun-co-QXK"/>
+                                </constraints>
+                                <state key="normal" title="Find out on the Internet ">
+                                    <color key="titleColor" name="AccentColor"/>
+                                    <imageReference key="image" image="magnifyingglass" catalog="system" renderingMode="template"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="E3d-Q7-a9k"/>
                         <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
@@ -200,10 +212,12 @@
                             <constraint firstItem="uCY-9U-HWA" firstAttribute="centerX" secondItem="n9a-YL-SMZ" secondAttribute="centerX" id="ArW-B9-7Mc"/>
                             <constraint firstItem="UZg-K4-Omf" firstAttribute="centerX" secondItem="n9a-YL-SMZ" secondAttribute="centerX" id="BCy-IV-gM9"/>
                             <constraint firstItem="zxj-Hn-gqX" firstAttribute="leading" secondItem="E3d-Q7-a9k" secondAttribute="leading" constant="20" id="ESo-SQ-tNN"/>
+                            <constraint firstItem="gvL-BZ-47w" firstAttribute="centerX" secondItem="n9a-YL-SMZ" secondAttribute="centerX" id="LFK-pA-KW4"/>
                             <constraint firstItem="X3S-25-73q" firstAttribute="top" secondItem="E3d-Q7-a9k" secondAttribute="top" constant="18" id="NPR-Qy-0s9"/>
                             <constraint firstItem="emh-VT-Cl1" firstAttribute="top" secondItem="RRf-vc-Dcr" secondAttribute="bottom" constant="-1" id="PQs-kH-yCb"/>
                             <constraint firstItem="emh-VT-Cl1" firstAttribute="centerX" secondItem="n9a-YL-SMZ" secondAttribute="centerX" id="SA4-cL-c6I"/>
                             <constraint firstItem="E3d-Q7-a9k" firstAttribute="trailing" secondItem="Chn-ca-0vt" secondAttribute="trailing" constant="20" id="TDK-aF-6tr"/>
+                            <constraint firstItem="gvL-BZ-47w" firstAttribute="top" secondItem="UZg-K4-Omf" secondAttribute="bottom" constant="8" symbolic="YES" id="ZQE-q3-iKh"/>
                             <constraint firstItem="RRf-vc-Dcr" firstAttribute="top" secondItem="ZYQ-oT-P2r" secondAttribute="bottom" constant="-1" id="aTd-4G-RK8"/>
                             <constraint firstItem="UZg-K4-Omf" firstAttribute="top" secondItem="emh-VT-Cl1" secondAttribute="bottom" id="e6i-7b-f5b"/>
                             <constraint firstItem="RRf-vc-Dcr" firstAttribute="centerX" secondItem="n9a-YL-SMZ" secondAttribute="centerX" id="oCL-dD-H2Z"/>
@@ -233,6 +247,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N38-CK-tQR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1508.6956521739132" y="786.83035714285711"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GzV-NS-YLD">
+            <objects>
+                <viewController id="zmB-5j-DQk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VHe-d1-Wrw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="McB-mW-2Z5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jId-Hy-trq">
+                                <rect key="frame" x="182" y="812" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="W5S-xS-VvA"/>
+                                    <constraint firstAttribute="width" constant="50" id="z2q-HX-aTZ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNG-BA-ZsZ">
+                                <rect key="frame" x="348" y="812" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="XA3-eX-ERZ"/>
+                                    <constraint firstAttribute="height" constant="50" id="vKr-L2-idk"/>
+                                </constraints>
+                                <state key="normal">
+                                    <imageReference key="image" image="chevron.forward" catalog="system" symbolScale="large" renderingMode="template"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHr-g8-cLl">
+                                <rect key="frame" x="16" y="812" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="X4o-FU-EhV"/>
+                                    <constraint firstAttribute="width" constant="50" id="xof-KJ-Oda"/>
+                                </constraints>
+                                <state key="normal">
+                                    <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large" renderingMode="template"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jnV-YX-0wZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jnV-YX-0wZ" firstAttribute="bottom" secondItem="jId-Hy-trq" secondAttribute="bottom" id="0WY-Bt-niU"/>
+                            <constraint firstItem="McB-mW-2Z5" firstAttribute="leading" secondItem="ZHr-g8-cLl" secondAttribute="trailing" constant="-66" id="GB9-CU-3He"/>
+                            <constraint firstItem="jnV-YX-0wZ" firstAttribute="bottom" secondItem="McB-mW-2Z5" secondAttribute="bottom" id="KpD-9K-eMT"/>
+                            <constraint firstItem="jnV-YX-0wZ" firstAttribute="bottom" secondItem="yNG-BA-ZsZ" secondAttribute="bottom" id="PnU-Ks-4v3"/>
+                            <constraint firstItem="yNG-BA-ZsZ" firstAttribute="leading" secondItem="McB-mW-2Z5" secondAttribute="trailing" constant="-66" id="bbf-rG-6f5"/>
+                            <constraint firstItem="jId-Hy-trq" firstAttribute="centerX" secondItem="VHe-d1-Wrw" secondAttribute="centerX" id="ibW-hr-Btw"/>
+                            <constraint firstItem="jnV-YX-0wZ" firstAttribute="trailing" secondItem="McB-mW-2Z5" secondAttribute="trailing" id="oqe-4r-NG5"/>
+                            <constraint firstItem="McB-mW-2Z5" firstAttribute="top" secondItem="jnV-YX-0wZ" secondAttribute="top" id="qPi-X6-oNu"/>
+                            <constraint firstItem="jnV-YX-0wZ" firstAttribute="bottom" secondItem="ZHr-g8-cLl" secondAttribute="bottom" id="tyX-4U-649"/>
+                            <constraint firstItem="McB-mW-2Z5" firstAttribute="leading" secondItem="jnV-YX-0wZ" secondAttribute="leading" id="wdP-m7-lxK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WSY-zn-6rk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2481" y="787"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="guN-Pl-FtA">
@@ -323,8 +402,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.forward" catalog="system" width="96" height="128"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="pngfind.com-refresh-icon-png-transparent-4296335.png" width="980" height="938"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

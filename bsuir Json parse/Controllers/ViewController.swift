@@ -174,7 +174,7 @@ class ViewController: UIViewController {
             //self.infoViewController.remove()
                            //print("Удалили menuViewController")
 //                       }
-        }
+        } 
         isMove = !isMove
         showInfoViewController(shouldMove: isMove)
 
