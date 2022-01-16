@@ -182,7 +182,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal">
-                                    <imageReference key="image" image="xmark" catalog="system" symbolScale="large" renderingMode="original"/>
+                                    <imageReference key="image" image="xmark" catalog="system" symbolScale="large" renderingMode="template"/>
                                 </state>
                                 <connections>
                                     <action selector="closeButtonAction:" destination="vvY-bJ-B57" eventType="touchUpInside" id="UUn-mz-L4H"/>
@@ -190,7 +190,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="E3d-Q7-a9k"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="E3d-Q7-a9k" firstAttribute="trailing" secondItem="X3S-25-73q" secondAttribute="trailing" constant="18" id="1G1-iV-xKH"/>
                             <constraint firstItem="uCY-9U-HWA" firstAttribute="top" secondItem="SH0-PQ-7DN" secondAttribute="bottom" constant="79" id="1UU-Qy-Oqu"/>
@@ -333,6 +333,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

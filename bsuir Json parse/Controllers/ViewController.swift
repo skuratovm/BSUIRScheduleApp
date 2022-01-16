@@ -7,14 +7,13 @@
 import UIKit
 
 
-class ViewController: UIViewController,MainViewControllerDelegate {
+class ViewController: UIViewController {
     
     var mainViewController: UIViewController!
     var infoViewController: UIViewController!
     var isMove = false
     
     var result: ScheduleModel?
-    var delegate: MainViewControllerDelegate?
     
     var resultMemoryArray = DataBase.shared.schedules
     var resultMemory: ScheduleModel?
@@ -76,6 +75,8 @@ class ViewController: UIViewController,MainViewControllerDelegate {
             resultMemory = DataBase.shared.schedules?[0]
         }
         NotificationCenter.default.addObserver(self, selector: #selector(alertRefresh(_:)), name: Notification.Name("ref"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(hideInfoView(_:)), name: Notification.Name("Hide"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(changeViewStatus(_:)), name: Notification.Name("appear"), object: nil)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -91,8 +92,8 @@ class ViewController: UIViewController,MainViewControllerDelegate {
         let vc = storyboard?.instantiateViewController(withIdentifier: "InfoViewController")
         let vcView = vc?.view
         vcView?.layer.cornerRadius = 40
-        vcView?.layer.borderWidth = 2
-        vcView?.layer.borderColor = UIColor.lightGray.cgColor
+        vcView?.layer.borderWidth = 1
+        vcView?.layer.borderColor = UIColor.systemBlue.cgColor
         vcView?.frame = CGRect(x: 1, y: 0, width: 412, height: 495)
         infoViewController = vc
         
@@ -106,12 +107,12 @@ class ViewController: UIViewController,MainViewControllerDelegate {
             // показываем menu
             UIView.animate(withDuration: 0.5,
                            delay: 0,
-                           usingSpringWithDamping: 0.8,
+                           usingSpringWithDamping: 0.7,
                            initialSpringVelocity: 0,
                            options: .curveEaseInOut, animations: {
                             self.infoViewController.view.frame.origin.y = self.infoViewController.view.frame.origin.y + 400
                            })
-//        } else {
+        } else {
 //            // убираем menu
 //            UIView.animate(withDuration: 0.5,
 //                           delay: 0,
@@ -125,9 +126,31 @@ class ViewController: UIViewController,MainViewControllerDelegate {
 ////                self.menuViewController.willMove(toParent: nil)
 ////                self.menuViewController.view.removeFromSuperview()
 ////                self.menuViewController.removeFromParent()
-//                self.infoViewController.remove()
-//                print("Удалили menuViewController")
-//            }
+                self.infoViewController.remove()
+                print("Удалили menuViewController")
+            isMove = false
+            //}
+        }
+    }
+    @objc func changeViewStatus(_ notification: Notification){
+        isMove = true
+    }
+    @objc func hideInfoView(_ notification: Notification){
+        UIView.animate(withDuration: 0.6,
+                       delay: 0,
+                       usingSpringWithDamping: 0.8,
+                       initialSpringVelocity: 0,
+                       options: .curveEaseInOut,
+                       animations: {
+                        self.infoViewController.view.frame.origin.y = self.infoViewController.view.frame.origin.y + 600
+        }) { (finished) in
+
+//                self.menuViewController.willMove(toParent: nil)
+//                self.menuViewController.view.removeFromSuperview()
+//                self.menuViewController.removeFromParent()
+            self.infoViewController.remove()
+            print("Удалили menuViewController")
+            self.isMove = false
         }
     }
     
@@ -135,9 +158,26 @@ class ViewController: UIViewController,MainViewControllerDelegate {
         
         if !isMove {
             configureInfoViewController()
+//        } else {
+//            UIView.animate(withDuration: 0.5,
+//                                      delay: 0,
+//                                      usingSpringWithDamping: 0.8,
+//                                      initialSpringVelocity: 0,
+//                                      options: .curveEaseInOut,
+//                                      animations: {
+//                                       self.infoViewController.view.frame.origin.y = 0
+//                       }) { (finished) in
+//
+//           //                self.menuViewController.willMove(toParent: nil)
+//           //                self.menuViewController.view.removeFromSuperview()
+//           //                self.menuViewController.removeFromParent()
+            //self.infoViewController.remove()
+                           //print("Удалили menuViewController")
+//                       }
         }
         isMove = !isMove
-       showInfoViewController(shouldMove: isMove)
+        showInfoViewController(shouldMove: isMove)
+
     }
     
 }

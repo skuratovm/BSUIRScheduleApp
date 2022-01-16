@@ -6,12 +6,8 @@
 //
 
 import UIKit
-protocol MainViewControllerDelegate{
-    func toggleMenu()
-}
 
 class InfoViewController: UIViewController {
-    var delegate: MainViewControllerDelegate?
 
     @IBOutlet weak var imageDownloadIndicator: UIActivityIndicatorView!
     @IBOutlet weak var subjectLabel: UILabel!
@@ -39,6 +35,11 @@ class InfoViewController: UIViewController {
         imageDownloadIndicator.startAnimating()
         NotificationCenter.default.addObserver(self, selector: #selector(setInfo(_:)), name: Notification.Name("extra"), object: nil)
          }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        NotificationCenter.default.post(name: Notification.Name("appear"), object: nil)
+    }
     
    
     func configureImage(imageURLString: String?){
@@ -77,7 +78,8 @@ class InfoViewController: UIViewController {
     }
     
     @IBAction func closeButtonAction(_ sender: UIButton) {
-        delegate?.toggleMenu()
+        NotificationCenter.default.post(name: Notification.Name("Hide"), object: nil)
+        
     }
     
 }
