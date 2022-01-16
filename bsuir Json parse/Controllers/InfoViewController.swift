@@ -9,6 +9,10 @@ import UIKit
 
 class InfoViewController: UIViewController {
 
+    var lastName = String()
+    var firstName: String = ""
+    var middleName: String = ""
+    
     @IBOutlet weak var imageDownloadIndicator: UIActivityIndicatorView!
     @IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet weak var lessonTypeLabel: UILabel!
@@ -75,11 +79,25 @@ class InfoViewController: UIViewController {
         lessonTypeLabel.text = object?[2] as? String
         teacherDegree.text = object?[6] as? String
         configureImage(imageURLString: imageUrl)
+        lastName = (object?[4] as? String)!
+        firstName = (object?[3] as? String)!
+        middleName = (object?[5] as? String)!
     }
     
     @IBAction func closeButtonAction(_ sender: UIButton) {
         NotificationCenter.default.post(name: Notification.Name("Hide"), object: nil)
         
     }
+    @IBAction func findOutButtonAction(_ sender: UIButton) {
+        let object = lastName + " " + firstName + " " + middleName + " " + "БГУиР"
+        if let encoded = object.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed), let url = URL(string: "http://www.google.com/search?q=\(encoded)") {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
+    
     
 }

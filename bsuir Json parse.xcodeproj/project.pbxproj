@@ -27,6 +27,7 @@
 		40ACF174274CE1A100BF2BD5 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ACF173274CE1A000BF2BD5 /* NetworkRequest.swift */; };
 		40ACF177274CEC4F00BF2BD5 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ACF176274CEC4F00BF2BD5 /* NetworkDataFetch.swift */; };
 		40EA307527935C29001BE924 /* UIViewController extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA307427935C29001BE924 /* UIViewController extension.swift */; };
+		40EA3079279455F0001BE924 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA3078279455F0001BE924 /* WebViewController.swift */; };
 		40F6E68D2773E8ED003FAB3F /* UIButton extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6E68C2773E8ED003FAB3F /* UIButton extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		40ACF176274CEC4F00BF2BD5 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 		40B137E42784E280004322D9 /* pngfind.com-refresh-icon-png-transparent-4296335.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pngfind.com-refresh-icon-png-transparent-4296335.png"; sourceTree = "<group>"; };
 		40EA307427935C29001BE924 /* UIViewController extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController extension.swift"; sourceTree = "<group>"; };
+		40EA3078279455F0001BE924 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		40F6E68C2773E8ED003FAB3F /* UIButton extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton extension.swift"; sourceTree = "<group>"; };
 		40FA817E27931D83000F0F9A /* unnamed (2).jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "unnamed (2).jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 				40931A55277253C000C28391 /* StartViewController.swift */,
 				40ACF159274BFB2E00BF2BD5 /* ViewController.swift */,
 				409283A32751453F00918185 /* InfoViewController.swift */,
+				40EA3078279455F0001BE924 /* WebViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				40ACF174274CE1A100BF2BD5 /* NetworkRequest.swift in Sources */,
 				409283A42751453F00918185 /* InfoViewController.swift in Sources */,
 				408FE32F2774B3F4004A1DA9 /* Alerts.swift in Sources */,
+				40EA3079279455F0001BE924 /* WebViewController.swift in Sources */,
 				40ACF158274BFB2E00BF2BD5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

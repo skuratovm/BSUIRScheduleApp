@@ -199,6 +199,9 @@
                                     <color key="titleColor" name="AccentColor"/>
                                     <imageReference key="image" image="magnifyingglass" catalog="system" renderingMode="template"/>
                                 </state>
+                                <connections>
+                                    <action selector="findOutButtonAction:" destination="vvY-bJ-B57" eventType="touchUpInside" id="iQG-tE-NLE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="E3d-Q7-a9k"/>
@@ -248,10 +251,10 @@
             </objects>
             <point key="canvasLocation" x="1508.6956521739132" y="786.83035714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="GzV-NS-YLD">
             <objects>
-                <viewController id="zmB-5j-DQk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebVC" id="zmB-5j-DQk" customClass="WebViewController" customModule="bsuir_Json_parse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VHe-d1-Wrw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,13 +267,18 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jId-Hy-trq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jId-Hy-trq">
                                 <rect key="frame" x="182" y="812" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="W5S-xS-VvA"/>
                                     <constraint firstAttribute="width" constant="50" id="z2q-HX-aTZ"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="arrow.clockwise" catalog="system" symbolScale="large" renderingMode="template"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshButtonAction:" destination="zmB-5j-DQk" eventType="touchUpInside" id="59W-eZ-FJF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNG-BA-ZsZ">
                                 <rect key="frame" x="348" y="812" width="50" height="50"/>
@@ -281,6 +289,9 @@
                                 <state key="normal">
                                     <imageReference key="image" image="chevron.forward" catalog="system" symbolScale="large" renderingMode="template"/>
                                 </state>
+                                <connections>
+                                    <action selector="forwardButtonAction:" destination="zmB-5j-DQk" eventType="touchUpInside" id="vzN-0S-dn2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHr-g8-cLl">
                                 <rect key="frame" x="16" y="812" width="50" height="50"/>
@@ -291,6 +302,9 @@
                                 <state key="normal">
                                     <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large" renderingMode="template"/>
                                 </state>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="zmB-5j-DQk" eventType="touchUpInside" id="7j3-zb-tE4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jnV-YX-0wZ"/>
@@ -308,6 +322,9 @@
                             <constraint firstItem="McB-mW-2Z5" firstAttribute="leading" secondItem="jnV-YX-0wZ" secondAttribute="leading" id="wdP-m7-lxK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="McB-mW-2Z5" id="xiL-5P-Qkc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSY-zn-6rk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -402,6 +419,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="chevron.forward" catalog="system" width="96" height="128"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
