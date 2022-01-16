@@ -64,6 +64,10 @@ class ViewController: UIViewController {
     @IBAction func refreshButtonAction(_ sender: UIButton) {
         fetchSchedule(groupNumber: groupNumber)
     }
+    
+    @IBAction func groupButtonAction(_ sender: Any) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(setGroupNumberValue(_:)), name: Notification.Name("data"), object: nil)
@@ -91,7 +95,7 @@ class ViewController: UIViewController {
     func configureInfoViewController(){
         let vc = storyboard?.instantiateViewController(withIdentifier: "InfoViewController")
         let vcView = vc?.view
-        vcView?.layer.cornerRadius = 40
+        vcView?.layer.cornerRadius = 41
         vcView?.layer.borderWidth = 1
         vcView?.layer.borderColor = UIColor.systemBlue.cgColor
         vcView?.frame = CGRect(x: 1, y: 0, width: 412, height: 495)

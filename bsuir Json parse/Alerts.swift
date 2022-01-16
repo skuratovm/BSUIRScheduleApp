@@ -20,6 +20,21 @@ extension ViewController {
         alertController.addAction(alertRefresh)
         present(alertController,animated: true)
     }
+    
+    func setUpGroupArlert(title: String,message: String){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        let alertCencel = UIAlertAction(title: "Отмена", style: .cancel) { (_) in
+    
+        }
+        let alertDelete = UIAlertAction(title: "Удалить", style: .default) { (_) in
+            NotificationCenter.default.post(name: Notification.Name("del"), object: nil)
+        }
+        alertController.addAction(alertCencel)
+        alertController.addAction(alertDelete)
+        present(alertController,animated: true)
+    }
+    
+    
 }
 
 
