@@ -251,85 +251,6 @@
             </objects>
             <point key="canvasLocation" x="1508.6956521739132" y="786.83035714285711"/>
         </scene>
-        <!--Web View Controller-->
-        <scene sceneID="GzV-NS-YLD">
-            <objects>
-                <viewController storyboardIdentifier="WebVC" id="zmB-5j-DQk" customClass="WebViewController" customModule="bsuir_Json_parse" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VHe-d1-Wrw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="McB-mW-2Z5">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jId-Hy-trq">
-                                <rect key="frame" x="182" y="812" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="W5S-xS-VvA"/>
-                                    <constraint firstAttribute="width" constant="50" id="z2q-HX-aTZ"/>
-                                </constraints>
-                                <state key="normal">
-                                    <imageReference key="image" image="arrow.clockwise" catalog="system" symbolScale="large" renderingMode="template"/>
-                                </state>
-                                <connections>
-                                    <action selector="refreshButtonAction:" destination="zmB-5j-DQk" eventType="touchUpInside" id="59W-eZ-FJF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNG-BA-ZsZ">
-                                <rect key="frame" x="348" y="812" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="XA3-eX-ERZ"/>
-                                    <constraint firstAttribute="height" constant="50" id="vKr-L2-idk"/>
-                                </constraints>
-                                <state key="normal">
-                                    <imageReference key="image" image="chevron.forward" catalog="system" symbolScale="large" renderingMode="template"/>
-                                </state>
-                                <connections>
-                                    <action selector="forwardButtonAction:" destination="zmB-5j-DQk" eventType="touchUpInside" id="vzN-0S-dn2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHr-g8-cLl">
-                                <rect key="frame" x="16" y="812" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="X4o-FU-EhV"/>
-                                    <constraint firstAttribute="width" constant="50" id="xof-KJ-Oda"/>
-                                </constraints>
-                                <state key="normal">
-                                    <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large" renderingMode="template"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButtonAction:" destination="zmB-5j-DQk" eventType="touchUpInside" id="7j3-zb-tE4"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="jnV-YX-0wZ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="jnV-YX-0wZ" firstAttribute="bottom" secondItem="jId-Hy-trq" secondAttribute="bottom" id="0WY-Bt-niU"/>
-                            <constraint firstItem="McB-mW-2Z5" firstAttribute="leading" secondItem="ZHr-g8-cLl" secondAttribute="trailing" constant="-66" id="GB9-CU-3He"/>
-                            <constraint firstItem="jnV-YX-0wZ" firstAttribute="bottom" secondItem="McB-mW-2Z5" secondAttribute="bottom" id="KpD-9K-eMT"/>
-                            <constraint firstItem="jnV-YX-0wZ" firstAttribute="bottom" secondItem="yNG-BA-ZsZ" secondAttribute="bottom" id="PnU-Ks-4v3"/>
-                            <constraint firstItem="yNG-BA-ZsZ" firstAttribute="leading" secondItem="McB-mW-2Z5" secondAttribute="trailing" constant="-66" id="bbf-rG-6f5"/>
-                            <constraint firstItem="jId-Hy-trq" firstAttribute="centerX" secondItem="VHe-d1-Wrw" secondAttribute="centerX" id="ibW-hr-Btw"/>
-                            <constraint firstItem="jnV-YX-0wZ" firstAttribute="trailing" secondItem="McB-mW-2Z5" secondAttribute="trailing" id="oqe-4r-NG5"/>
-                            <constraint firstItem="McB-mW-2Z5" firstAttribute="top" secondItem="jnV-YX-0wZ" secondAttribute="top" id="qPi-X6-oNu"/>
-                            <constraint firstItem="jnV-YX-0wZ" firstAttribute="bottom" secondItem="ZHr-g8-cLl" secondAttribute="bottom" id="tyX-4U-649"/>
-                            <constraint firstItem="McB-mW-2Z5" firstAttribute="leading" secondItem="jnV-YX-0wZ" secondAttribute="leading" id="wdP-m7-lxK"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="webView" destination="McB-mW-2Z5" id="xiL-5P-Qkc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WSY-zn-6rk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2481" y="787"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="guN-Pl-FtA">
             <objects>
@@ -419,9 +340,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
-        <image name="chevron.forward" catalog="system" width="96" height="128"/>
-        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="pngfind.com-refresh-icon-png-transparent-4296335.png" width="980" height="938"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
