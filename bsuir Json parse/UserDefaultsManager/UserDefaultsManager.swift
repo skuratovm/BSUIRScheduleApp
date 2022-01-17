@@ -29,5 +29,8 @@ class DataBase{
         
         schedules?.insert(result!, at: 0)
     }
+    func deleteSchedule(){
+        schedules?.removeAll()
+    }
 }
 

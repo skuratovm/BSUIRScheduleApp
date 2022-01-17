@@ -54,13 +54,13 @@
                                     <action selector="refreshButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ukW-uB-ufF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgf-8o-QXo">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgf-8o-QXo">
                                 <rect key="frame" x="0.0" y="87" width="180" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="3pK-O9-wZo"/>
                                     <constraint firstAttribute="height" constant="40" id="5ed-mK-83e"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="groupButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hPG-i6-MRP"/>
                                 </connections>

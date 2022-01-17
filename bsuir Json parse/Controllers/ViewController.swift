@@ -53,19 +53,21 @@ class ViewController: UIViewController {
         fetchSchedule(groupNumber: groupNumber)
     }
     @objc func setGroupNumberValue(_ notification: Notification){
-        let groupNumberLL = notification.object as! String
-        groupNumber = groupNumberLL
-        groupTextLabel.text = "    группа \(groupNumberLL)"
-        
+        if resultMemoryArray?.isEmpty == true{
+            let groupNumberLL = notification.object as! String
+            groupNumber = groupNumberLL
+            groupTextLabel.text = "    группа \(groupNumberLL)"
+        } else if resultMemoryArray?.isEmpty == false{
+            let studentGroupString = "\(resultMemory?.studentGroup.name )"
+            groupTextLabel.text = "    группа \(studentGroupString)"
+        }
     }
-    
     @IBOutlet weak var refreshButtonOutlet: UIButton!
-    
     @IBAction func refreshButtonAction(_ sender: UIButton) {
         fetchSchedule(groupNumber: groupNumber)
     }
-    
-    @IBAction func groupButtonAction(_ sender: Any) {
+    @IBAction func groupButtonAction(_ sender: UIButton) {
+        setUpGroupAlert(title: "Изменить номер группы", message: "Вы можете изменить номер группы,удалив текущее расписание")
         
     }
     override func viewDidLoad() {
@@ -81,6 +83,7 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(alertRefresh(_:)), name: Notification.Name("ref"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(hideInfoView(_:)), name: Notification.Name("Hide"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(changeViewStatus(_:)), name: Notification.Name("appear"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeModel(_:)), name: Notification.Name("del"), object: nil)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -117,24 +120,17 @@ class ViewController: UIViewController {
                             self.infoViewController.view.frame.origin.y = self.infoViewController.view.frame.origin.y + 400
                            })
         } else {
-//            // убираем menu
-//            UIView.animate(withDuration: 0.5,
-//                           delay: 0,
-//                           usingSpringWithDamping: 0.8,
-//                           initialSpringVelocity: 0,
-//                           options: .curveEaseInOut,
-//                           animations: {
-//                            self.infoViewController.view.frame.origin.y = 0
-//            }) { (finished) in
-//
-////                self.menuViewController.willMove(toParent: nil)
-////                self.menuViewController.view.removeFromSuperview()
-////                self.menuViewController.removeFromParent()
+
                 self.infoViewController.remove()
                 print("Удалили menuViewController")
             isMove = false
-            //}
         }
+    }
+    @objc func removeModel(_ notification: Notification){
+        DataBase.shared.deleteSchedule()
+        let vc = storyboard?.instantiateViewController(withIdentifier: "Start") as! StartViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
     @objc func changeViewStatus(_ notification: Notification){
         isMove = true
@@ -148,10 +144,6 @@ class ViewController: UIViewController {
                        animations: {
                         self.infoViewController.view.frame.origin.y = self.infoViewController.view.frame.origin.y + 600
         }) { (finished) in
-
-//                self.menuViewController.willMove(toParent: nil)
-//                self.menuViewController.view.removeFromSuperview()
-//                self.menuViewController.removeFromParent()
             self.infoViewController.remove()
             print("Удалили menuViewController")
             self.isMove = false
@@ -162,28 +154,10 @@ class ViewController: UIViewController {
         
         if !isMove {
             configureInfoViewController()
-//        } else {
-//            UIView.animate(withDuration: 0.5,
-//                                      delay: 0,
-//                                      usingSpringWithDamping: 0.8,
-//                                      initialSpringVelocity: 0,
-//                                      options: .curveEaseInOut,
-//                                      animations: {
-//                                       self.infoViewController.view.frame.origin.y = 0
-//                       }) { (finished) in
-//
-//           //                self.menuViewController.willMove(toParent: nil)
-//           //                self.menuViewController.view.removeFromSuperview()
-//           //                self.menuViewController.removeFromParent()
-            //self.infoViewController.remove()
-                           //print("Удалили menuViewController")
-//                       }
         } 
         isMove = !isMove
         showInfoViewController(shouldMove: isMove)
-
     }
-    
 }
 
 extension ViewController:UITableViewDelegate,UITableViewDataSource{
