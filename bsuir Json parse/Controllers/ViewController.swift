@@ -41,7 +41,6 @@ class ViewController: UIViewController {
                
                 self?.resultMemory = self?.result
                 self!.tableView.reloadData()
-                //self?.activityIndicator.stopAnimating()
                 
             } else {
                 self?.errorArlert(title: "Ошибка соединения!", message: "Проверьте подкрлючение к инернету и попробуйте еще раз.")
@@ -76,7 +75,6 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "CellTableViewCell", bundle: nil), forCellReuseIdentifier: "InfoCell")
-        // Do any additional setup after loading the view
         if resultMemoryArray?.isEmpty == false{
             resultMemory = DataBase.shared.schedules?[0]
         }
@@ -117,12 +115,11 @@ class ViewController: UIViewController {
                            usingSpringWithDamping: 0.7,
                            initialSpringVelocity: 0,
                            options: .curveEaseInOut, animations: {
-                            self.infoViewController.view.frame.origin.y = self.infoViewController.view.frame.origin.y + 400
+                            self.infoViewController.view.frame.origin.y = self.view.frame.maxY - 496
                            })
         } else {
 
                 self.infoViewController.remove()
-                print("Удалили menuViewController")
             isMove = false
         }
     }
@@ -142,10 +139,9 @@ class ViewController: UIViewController {
                        initialSpringVelocity: 0,
                        options: .curveEaseInOut,
                        animations: {
-                        self.infoViewController.view.frame.origin.y = self.infoViewController.view.frame.origin.y + 600
+                        self.infoViewController.view.frame.origin.y = self.infoViewController.view.frame.origin.y + 800
         }) { (finished) in
             self.infoViewController.remove()
-            print("Удалили menuViewController")
             self.isMove = false
         }
     }

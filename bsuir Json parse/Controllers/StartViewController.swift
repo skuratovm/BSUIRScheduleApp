@@ -14,8 +14,7 @@ class StartViewController: UIViewController {
             groupTextField.layer.cornerRadius = groupTextField.frame.height / 2
         }
     }
-    
-    
+
     @IBOutlet weak var logoImageView: UIImageView!{
         didSet{
             logoImageView.layer.cornerRadius = logoImageView.frame.height / 4
@@ -30,11 +29,9 @@ class StartViewController: UIViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
